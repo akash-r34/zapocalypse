@@ -1,0 +1,36 @@
+rules_version = '2';
+
+// Single-user app. Admin SDK bypasses these rules (server writes are unaffected).
+// Client SDK is gated to one verified Google account; client writes are denied everywhere.
+//
+// SETUP: Replace <owner-email> with your Google account email before deploying:
+//   firebase deploy --only firestore:rules
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isOwner() {
+      return request.auth != null
+        && request.auth.token.email == "<owner-email>"
+        && request.auth.token.email_verified == true;
+    }
+
+    // Server-only state (signing keys, kill switch, etc.) — never readable by the client.
+    match /system/{doc=**} {
+      allow read, write: if false;
+    }
+
+    match /projects/{projectId}/{document=**} {
+      allow read: if isOwner();
+      allow write: if false;
+    }
+
+    match /budget/{doc} {
+      allow read: if isOwner();
+      allow write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

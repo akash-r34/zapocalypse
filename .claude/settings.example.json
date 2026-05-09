@@ -1,0 +1,35 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -f package.json ] && npm run typecheck --silent 2>&1 | head -20 || true"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -f src/lib/pipeline/orchestrator.ts ] && grep -q 'checkBudget' src/lib/pipeline/orchestrator.ts || echo '⚠️  WARNING: orchestrator.ts may be missing budget checks'"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo $TOOL_INPUT | grep -qiE 'rm -rf|drop table|delete from|firebase.*delete' && echo '⛔ Destructive command detected — confirm before proceeding' || true"
+          }
+        ]
+      }
+    ]
+  }
+}

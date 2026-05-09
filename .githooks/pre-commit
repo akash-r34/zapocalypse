@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Pre-commit hook — runs secret scanner against staged diff.
+# Activate once with: git config core.hooksPath .githooks
+set -euo pipefail
+
+SCRIPT="$(git rev-parse --show-toplevel)/scripts/scan-secrets.sh"
+if [[ -x "$SCRIPT" ]]; then
+  "$SCRIPT"
+fi

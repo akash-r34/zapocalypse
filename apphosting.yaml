@@ -1,0 +1,64 @@
+runConfig:
+  minInstances: 0
+  maxInstances: 2
+  timeoutSeconds: 300
+  memoryMiB: 1024
+  cpu: 1
+
+# SETUP: Replace all placeholder values with your own Firebase project config.
+# See .env.example for the full list of variables and where to find each value.
+env:
+  - variable: GOOGLE_CLOUD_PROJECT
+    value: your-firebase-project-id
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: GOOGLE_CLOUD_LOCATION
+    value: us-central1
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: GEMINI_MODEL
+    value: gemini-2.5-flash
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_API_KEY
+    value: your_firebase_web_api_key
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+    value: your-firebase-project-id.firebaseapp.com
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: your-firebase-project-id
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+    value: your-firebase-project-id.firebasestorage.app
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+    value: your_messaging_sender_id
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_APP_ID
+    value: your_firebase_app_id
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_ALLOWED_USER_EMAIL
+    value: your@email.com
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: ALLOWED_USER_EMAIL
+    value: your@email.com
+    availability:
+      - RUNTIME

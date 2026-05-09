@@ -1,0 +1,13 @@
+---
+description: Zapocalypse project standards — follow CLAUDE.md and shared .claude/ playbook
+alwaysApply: true
+---
+
+# Zapocalypse (Cursor)
+
+Treat **`CLAUDE.md`** at the repository root as the **binding** project brief. It pulls in `AGENTS.md`, `.claude/rules/`, and documents skills, slash-command workflows, wiki-first lookup, and memory sync.
+
+- Do **not** maintain Cursor-only copies of those rules; Cursor, Claude Code, and Gemini share `.claude/`.
+- **`GEMINI.md`** at the repo root describes the same tri-agent setup from Gemini Antigravity’s perspective.
+- When a “slash command” applies, follow the checklist in the matching file under `.claude/commands/` (Cursor has no native `/command` menu for these).
+- Run the **Rule 3 memory sync** (`CLAUDE.md` + `.claude/memory/sync-checklist.md`) only **after the user confirms the current work is functioning** — not proactively before commits.

@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+/*
+ * Zapocalypse Design System
+ * Monochrome glassmorphism — dark-first, Apple-like minimalism.
+ * Dark mode is the brand default (pure black canvas, white type).
+ * Light mode toggled via .light class on <html>.
+ */
+
+@theme inline {
+  /* ── Semantic color tokens ────────────────────────────────── */
+  /* These resolve via --glass-* CSS vars set per mode below    */
+
+  --color-accent: var(--glass-accent);
+  --color-accent-muted: var(--glass-accent-muted);
+  --color-bg: var(--glass-bg);
+  --color-bg-secondary: var(--glass-bg-secondary);
+  --color-text: var(--glass-text);
+  --color-text-secondary: var(--glass-text-secondary);
+  --color-text-tertiary: var(--glass-text-tertiary);
+  --color-danger: var(--glass-danger);
+  --color-warning: var(--glass-warning);
+
+  /* ── Shape scale ─────────────────────────────────────────── */
+  --radius-none: 0px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* ── Typography ──────────────────────────────────────────── */
+  --font-sans: var(--font-geist-sans, system-ui, -apple-system, sans-serif);
+  --font-mono: var(--font-geist-mono, monospace);
+}
+
+/* ── Dark mode (brand default) ────────────────────────────────── */
+:root {
+  --glass-bg: #000000;
+  --glass-bg-secondary: #0a0a0a;
+  --glass-text: #ffffff;
+  --glass-text-secondary: #a1a1a6;
+  --glass-text-tertiary: #6e6e73;
+  --glass-accent: #ffffff;
+  --glass-accent-muted: rgba(255, 255, 255, 0.4);
+  --glass-danger: #ff453a;
+  --glass-warning: #ffd60a;
+  --glass-surface: rgba(255, 255, 255, 0.03);
+  --glass-surface-hover: rgba(255, 255, 255, 0.06);
+  --glass-surface-elevated: rgba(255, 255, 255, 0.06);
+  --glass-surface-header: rgba(0, 0, 0, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-light: rgba(255, 255, 255, 0.15);
+  --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --glass-shadow-elevated: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --glass-blur: 40px;
+  --glass-blur-lg: 64px;
+  color-scheme: dark;
+}
+
+/* ── Light mode (via toggle) ──────────────────────────────────── */
+.light {
+  --glass-bg: #f9f9fb;
+  --glass-bg-secondary: #ffffff;
+  --glass-text: #1d1d1f;
+  --glass-text-secondary: #6e6e73;
+  --glass-text-tertiary: #86868b;
+  --glass-accent: #000000;
+  --glass-accent-muted: rgba(0, 0, 0, 0.4);
+  --glass-danger: #ea4335;
+  --glass-warning: #fbbc05;
+  --glass-surface: rgba(255, 255, 255, 0.25);
+  --glass-surface-hover: rgba(255, 255, 255, 0.45);
+  --glass-surface-elevated: rgba(255, 255, 255, 0.35);
+  --glass-surface-header: rgba(255, 255, 255, 0.2);
+  --glass-border: rgba(255, 255, 255, 0.7);
+  --glass-border-light: rgba(255, 255, 255, 0.9);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --glass-shadow-elevated: 0 12px 48px rgba(0, 0, 0, 0.12);
+  --glass-blur: 60px;
+  --glass-blur-lg: 100px;
+  color-scheme: light;
+}
+
+/* ── Logo Toggles ────────────────────────────────────────────── */
+.dark-logo {
+  display: block;
+}
+.light-logo {
+  display: none;
+}
+
+.light .dark-logo {
+  display: none;
+}
+.light .light-logo {
+  display: block;
+}
+
+/* ── Spring Animation Variables ──────────────────────────────── */
+:root {
+  --spring-snappy: linear(0, 0.009, 0.035 2.1%, 0.141 4.4%, 0.723 12.4%, 0.938 16%, 1.017 18.2%, 1.077, 1.121 22.3%, 1.149 24.4%, 1.159, 1.163 27.3%, 1.154, 1.129 32.8%, 1.051 39.6%, 1.017 43.5%, 1);
+  --spring-gentle: linear(0, 0.006, 0.025 2.8%, 0.101 6.1%, 0.539 14.8%, 0.721 19.2%, 0.833 23.7%, 0.918 28.7%, 0.968 34.1%, 0.991 39.9%, 1.002 45.9%, 1.005 50.7%, 1);
+  --spring-bouncy: linear(0, 0.004, 0.016, 0.035, 0.063, 0.098, 0.141, 0.191, 0.248, 0.311, 0.38, 0.454, 0.533, 0.614, 0.698, 0.782, 0.864, 0.941, 1.013, 1.077, 1.132, 1.178, 1.213, 1.237, 1.249, 1.25, 1.24, 1.219, 1.188, 1.148, 1.101, 1.05, 0.996, 0.941, 0.887, 0.835, 0.787, 0.744, 0.706, 0.674, 0.649, 0.63, 0.618, 0.613, 0.614, 0.62, 0.631, 0.646, 0.664, 0.684, 0.706, 0.728, 0.75, 0.771, 0.791, 0.808, 0.824, 0.837, 0.848, 0.856, 0.862, 0.866, 0.868, 0.868, 0.867, 0.865, 0.863, 0.861, 0.859, 0.858, 0.858, 0.858, 0.859, 0.861, 0.864, 0.867, 0.87, 0.874, 0.878, 0.882, 0.885, 0.889, 0.892, 0.895, 0.898, 0.9, 0.902, 0.904, 0.906, 0.908, 0.909, 0.911, 0.912, 0.913, 0.914, 0.915, 0.916, 0.917, 0.918, 0.919, 0.919, 0.92, 0.921, 0.921, 1);
+}
+
+/* ── Spring Keyframes ─────────────────────────────────────────── */
+@keyframes card-reveal {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes badge-pop {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.animate-card-reveal {
+  animation: card-reveal 0.5s var(--spring-gentle) both;
+}
+
+.animate-badge-pop {
+  animation: badge-pop 0.4s var(--spring-bouncy) both;
+}
+
+.animate-slide-in {
+  animation: slide-in-right 0.3s var(--spring-snappy) both;
+}
+
+/* ── Ambient Variables ───────────────────────────────────────── */
+:root {
+  --orb-1: rgba(255, 255, 255, 0.04);
+  --orb-2: rgba(255, 255, 255, 0.05);
+  --orb-3: rgba(255, 255, 255, 0.03);
+}
+
+.light {
+  --orb-1: rgba(0, 0, 0, 0.12);
+  --orb-2: rgba(0, 0, 0, 0.16);
+  --orb-3: rgba(0, 0, 0, 0.10);
+}
+
+
+/* ── Utilities ────────────────────────────────────────────────── */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* ── Base ─────────────────────────────────────────────────────── */
+body {
+  background-color: var(--glass-bg);
+  color: var(--glass-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Glassmorphism utility classes ────────────────────────────── */
+
+.glass {
+  background: var(--glass-surface);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-elevated {
+  background: var(--glass-surface-elevated);
+  backdrop-filter: blur(var(--glass-blur-lg));
+  -webkit-backdrop-filter: blur(var(--glass-blur-lg));
+  border: 1px solid var(--glass-border-light);
+  box-shadow: var(--glass-shadow-elevated);
+}
+
+.glass-header {
+  background: var(--glass-surface-header);
+  backdrop-filter: blur(var(--glass-blur-lg));
+  -webkit-backdrop-filter: blur(var(--glass-blur-lg));
+  border-bottom: 1px solid var(--glass-border);
+}

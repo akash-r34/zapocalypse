@@ -1,0 +1,21 @@
+The Myth of the 10x Developer: What High Performance Actually Looks Like
+
+For years, the tech industry has been obsessed with the idea of the "10x developer" — a mythical engineer who is supposedly ten times more productive than an average programmer. This concept has shaped hiring practices, salary negotiations, and team dynamics across thousands of companies. But the more you examine it, the more it falls apart.
+
+The origin of the 10x myth traces back to a 1968 study by Sackman, Erikson, and Grant, which found a 10:1 ratio in programming performance between individuals. What most people citing this study don't realize is that it compared vastly different programmers — from students with two months of experience to seasoned professionals with eleven years. It wasn't measuring individual variation; it was measuring the gap between beginners and experts.
+
+What high performance actually looks like isn't a solo act of genius. It's a set of compounding habits and environmental factors that most people can develop.
+
+The first factor is context-switching minimization. Research by Gloria Mark at UC Irvine found that it takes an average of 23 minutes to fully return to a task after an interruption. High performers obsessively protect their deep work time. They batch meetings, disable Slack notifications during focused blocks, and ruthlessly triage what deserves their attention.
+
+The second factor is better problem decomposition. The most effective engineers I've worked with have an almost superhuman ability to take a vague, complex problem and break it into concrete, independently testable pieces. This skill isn't innate — it's developed through deliberate practice and code review feedback over years.
+
+Third is investing in tooling and automation. A developer who spends two days automating a task they'd otherwise do daily for a year has effectively multiplied their output without writing a single line of product code. The leverage here is enormous and systematically undervalued by organizations.
+
+Fourth, and perhaps most counterintuitive, is saying no. High-output engineers say no to more things than their peers. They decline feature requests that don't fit the architecture. They push back on unrealistic deadlines. They refuse to take on technical debt that will cost ten times as much later. This selective focus is what allows them to go deep on the things that actually matter.
+
+Finally, high performers write for their future selves and teammates. They document decisions, not just implementations. They write tests that explain intent. They leave code review comments that teach rather than criticize. This invisible multiplier compounds across the entire team.
+
+The real insight isn't that some people are 10x developers. It's that most developers are operating at 2x or 3x their potential, held back by poor environment design, constant interruption, lack of feedback loops, and a culture that mistakes busyness for productivity.
+
+The path to high performance isn't finding mythical talent. It's building the conditions where ordinary, skilled engineers can do extraordinary work consistently.
