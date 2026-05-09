@@ -4,6 +4,10 @@
 
 This is a personal portfolio project showcasing the use of multi-agent AI tooling (Claude Code, Cursor, Gemini Antigravity) to plan, implement, and ship a production Next.js application. It also demonstrates the [LLM Project Wiki](https://github.com/akash-r34/llm-project-wiki) second-brain pattern — a structured Obsidian vault that serves as the authoritative reference for all agents working on the codebase.
 
+🔗 **Live:** [zapocalypse--zapocalypse-8cd8b.us-central1.hosted.app](https://zapocalypse--zapocalypse-8cd8b.us-central1.hosted.app/) (single-user gated; sign-in restricted to the project owner)
+
+![Landing hero](public/screenshots/01-landing-hero.png)
+
 ---
 
 ## What it does
@@ -13,6 +17,34 @@ This is a personal portfolio project showcasing the use of multi-agent AI toolin
 3. You get platform-ready content with tone fingerprinting, cost tracking, C2PA provenance, and selective regeneration.
 
 **Stack:** Next.js 16 (App Router) · TypeScript · Tailwind v4 · Cloud Firestore · Firebase App Hosting · Gemini 2.5 Flash (Vertex AI, ADC)
+
+---
+
+## Screenshots
+
+### The problem it solves
+![The problem with generic AI slop](public/screenshots/03-problem.png)
+
+### Built-for-creators feature set
+Additive tone fingerprinting, selective regeneration, hook leaderboards, C2PA provenance, and GEO/dark-social formatting:
+![Feature grid](public/screenshots/04-features.png)
+
+### One input → an entire week of content
+![Output platforms](public/screenshots/05-output-how-it-works.png)
+
+### Tiered pricing with refund logic
+![Pricing](public/screenshots/06-pricing.png)
+
+### FAQ
+![FAQ](public/screenshots/07-faq.png)
+
+### Single-user auth gate
+The app is locked to one verified Google account. Anyone reaching a workspace route hits this card; an unauthorized email is signed out immediately.
+
+![Sign-in card](public/screenshots/09-signin-card.png)
+
+### Mobile
+![Mobile landing](public/screenshots/08-mobile-landing.png)
 
 ---
 
